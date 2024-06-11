@@ -3,11 +3,16 @@ Python version 3.9.4
 additional requirements in requirements.txt
 
 
-starting the project
-step one you should enter the virtual environment source env/bin/activate in command line
-step two you should run python3 app.py
+First time starting the project
+step one you should install the virtual environment in the project in the command line with pip3 install virtualenv then create the environment by going virtualenv env (or replace env with what you want to call it.
+step two you should enter the virtual environment source env/bin/activate in command line
+step three you should install the requirements into the virtual env with pip3 install. (likely just need flask, and flask-sqlalchemy the rest are I believe dependencies that are automatically installed.)
+step four you should run python3 app.py
 from there all functions of the program are reachable on localhost:5000 from the browser
 
+future times starting the project 
+step one you should enter the virtual environment source env/bin/activate in command line
+step two you should run python3 app.py
 
 functionality at localhost:5000
 
