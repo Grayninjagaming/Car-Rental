@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+
+{% block head %} 
+<title>Rentals Manager</title>
+{%endblock%}
+
+{% block body%} 
+<div class="content">
+    <h1>Rentals Manager</h1>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Car ID</th>
+            <th>Functions</th>
+        </tr>
+        {% for rental in rentals %}
+
+            <tr>
+                <td>
+                    {{rental.id}}
+                </td>
+                <td>
+                    {{rental.startDT.date()}}
+                </td>
+                <td>
+                    {{rental.endDT.date()}}
+                </td>
+                <td>
+                    {{rental.car_id}}
+                </td>
+                <td>
+                    <a href="/rentals/update/{{rental.id}}">Update</a>
+                    <br>
+                    <a href="/rentals/delete/{{rental.id}}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form action="/rentals" method="POST">
+        <input type="text" name="startDate" id="startDate">
+        <input type="text" name="duration" id="duration">
+        <input type="text" name="car" id="car">
+        <input type="submit" value="Add rental record">
+
+    </form>
+</div>
+{%endblock%}

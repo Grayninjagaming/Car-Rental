@@ -1,0 +1,20 @@
+{% block head %}
+<title>Car Updater</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Update Car</h1>
+
+    <div class="form">
+        <form action="/cars/update/{{car.id}}" method="POST">
+            <input type="text" name="make" id="make" value="{{car.make}}">
+            <input type="text" name="model" id="model" value="{{car.model}}">
+            <input type="text" name="location" id="location" value="{{car.location_id}}">
+            <input type="submit" value="Edit Car">
+        </form>
+    </div>
+{% endblock %}
+
+
+</div>

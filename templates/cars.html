@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+
+{% block head %} 
+<title>Car Manager</title>
+{%endblock%}
+
+{% block body%} 
+<div class="content">
+    <h1>Car Manager</h1>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Functions</th>
+        </tr>
+        {% for car in cars %}
+
+            <tr>
+                <td>
+                    c{{car.id}}
+                </td>
+                <td>
+                    {{car.make}}
+                </td>
+                <td>
+                    {{car.model}}
+                </td>
+                <td>
+                    <a href="/cars/update/{{car.id}}">Update</a>
+                    <br>
+                    <a href="/cars/rentalList/{{car.id}}">List Rentals</a>
+                    <br>
+                    <a href="/cars/delete/{{car.id}}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form action="/cars" method="POST">
+        <input type="text" name="make" id="make">
+        <input type="text" name="model" id="model">
+        <input type="text" name="location" id="location">
+        <input type="submit" value="Add Car">
+
+    </form>
+</div>
+{%endblock%}
